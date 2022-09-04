@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="m-0 md:overflow-y-hidden">
+  <div class="md:grid grid-cols-12 pb-5">
+    <div class="col-span-9 flex items-center justify-between w-full h-screen border-b-2 md:border-r-2 md:border-b-0 drop-shadow-md">
+      <form id="form" class="w-full p-4 items-center flex flex-col gap-y-3">
+
+        <div class="flex flex-col items-center w-full drop-shadow-md gap-y-3">
+
+          <div class="flex w-full gap-x-3">
+
+            <div class="grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Type</label>
+              <select name="type" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="RK1">1RK</option>
+                <option value="BHK1">1BHK</option>
+                <option value="BHK2">2BHK</option>
+                <option value="BHK3">3BHK</option>
+                <option value="BHK4">4BHK</option>
+                <option value="BHK4PLUS">4BHK+</option>
+              </select>
+            </div>
+            <div class="grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Lease Type</label>
+              <select name="leaseType" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="FAMILY">Family</option>
+                <option value="ANYONE">Anyone</option>
+                <option value="BACHELOR">Bachelor</option>
+                <option value="COMPANY">Company</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Lift</label>
+              <select name="lift" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+              </select>
+            </div>
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Swimming Pool</label>
+              <select name="swimmingPool" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Furnishing</label>
+              <select name="furnishing" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="NOT_FURNISHED">Not Furnished</option>
+                <option value="SEMI_FURNISHED">Semi Furnished</option>
+                <option value="FULLY_FURNISHED">Fully Furnished</option>
+              </select>
+            </div>
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Parking</label>
+              <select name="parking" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="NONE">None</option>
+                <option value="TWO_WHEELER">2 Wheeler</option>
+                <option value="FOUR_WHEELER">4 Wheeler</option>
+                <option value="BOTH">Both</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Property Size</label>
+              <div>
+                <input type="number" name="propertyValue"/>
+              </div>
+
+            </div>
+
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Bathroom</label>
+              <div>
+                <input type="number" name="bathroomValue"/>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Facing</label>
+              <select name="facing" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="E">East</option>
+                <option value="W">West</option>
+                <option value="N">North</option>
+                <option value="S">South</option>
+                <option value="NE">North-East</option>
+                <option value="NW">North-West</option>
+                <option value="SE">South-East</option>
+                <option value="SW">South-West</option>
+              </select>
+            </div>
+
+
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Cupboard</label>
+              <div>
+                <input type="number" name="cupboardValue"/>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Floor</label>
+              <div>
+                <input type="number" name="floorValue"/>
+              </div>
+            </div>
+
+
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Total Floors</label>
+              <div>
+                <input type="number" name="totalFloorsValue"/>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Water Supply</label>
+              <select name="waterSupply" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="COPR_BORE">Corporate Borewell</option>
+                <option value="CORPORATION">Corporation</option>
+                <option value="BOREWELL">Borewell</option>
+              </select>
+
+            </div>
+
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Building Type</label>
+              <select name="buildingType" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value="AP">AP</option>
+                <option value="IF">IF</option>
+                <option value="IH">IH</option>
+                <option value="GC">GC</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex w-full gap-x-3">
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Balconies</label>
+              <select name="balconies" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+                </select>
+            </div>
+            <div class="col-span-1 grid md:grid-cols-4 items-center w-full">
+              <label for="" class="col-span-2">Gym</label>
+              <select name="gym" id="" class="col-span-2 text-white bg-blue-300 rounded-md px-4 py-2 w-full">
+                <option value=0>Select Option</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" onclick="window.scrollTo(0, document.body.scrollHeight)"
+          class="self-center bg-blue-300 rounded-md px-4 py-2 w-fit mt-5 text-white drop-shadow-md">Submit</button>
+      </form>
+    </div>
+    <div class="col-span-3 px-3 pt-5 h-screen">
+      <div>
+          <h1 class="text-3xl">
+              Estimated Price:
+          </h1>
+      </div>
+      <h1 id="price"></h1>
+    </div>
+  </div>
+
+
+
+  <script src="./scripts/dropdownScript.js"></script>
+  <script src="./scripts/tailwindScript.js"></script>
+  <script src="./scripts/showPrice.js"></script>
+</body>
+
+</html>
